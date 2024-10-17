@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa theo chiều ngang */
+    justify-content: center; /* Căn giữa theo chiều dọc */
+    height: 100vh; /* Đảm bảo body có chiều cao đầy đủ */
+    margin: 0; /* Xóa margin mặc định */
+    padding: 0; /* Xóa padding mặc định */
+    background-image: url("backgroundlogin.jpg");
+    background-size: cover; /* Hoặc 'contain' nếu bạn muốn */
+    background-position: center; /* Căn giữa ảnh */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+  }
+  
+  #title {
+    font-weight: bold; /* Đặt font-weight cho tiêu đề */
+    font-family: "Times New Roman", Times, serif;
+    font-size: xx-large;
+  }
+  
+  input {
+    width: 250px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  button {
+    width: 150px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 55px;
+    background-color: #e5be34;
+    color: white;
+    cursor: pointer;
+  }
+  

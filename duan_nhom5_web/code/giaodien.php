@@ -22,7 +22,7 @@
     <section class="products">
         <h2>Our Fast Food Menu</h2>
         <div class="product-list">
-            <?php
+            <!-- <?php
             $query = "SELECT * FROM foods LIMIT 4";
             $result = mysqli_query($conn, $query);
             while ($row = mysqli_fetch_assoc($result)) {
@@ -35,7 +35,7 @@
                     <a href='pages/food_detail.php?id={$row['id']}'>Order Now</a>
                 </div>";
             }
-            ?>
+            ?> -->
         </div>
     </section>
 </body>
