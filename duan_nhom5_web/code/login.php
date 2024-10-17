@@ -16,6 +16,7 @@
         <button id="login" type="submit" name="action" value="login" >Đăng nhập</button>
         <button id="register" type="submit" name="action" value="register">Đăng ký</button>
     </form>
+    <!-- khanh an cut -->
 </body>
 </html>
 <?php
@@ -27,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($action === 'login') {
         // Kiểm tra tên đăng nhập và mật khẩu không rỗng
         if (!empty($username) && !empty($password)) {
-            // Chuyển đến trang display.php sau khi đăng nhập thành công
+            // Chuyển đến trang giaodien.php sau khi đăng nhập thành công
             header('Location: giaodien.php');
             exit(); // Đảm bảo dừng thực hiện mã tiếp theo
         } else {
