@@ -16,7 +16,6 @@
         <button id="login" type="submit" name="action" value="login" >Đăng nhập</button>
         <button id="register" type="submit" name="action" value="register">Đăng ký</button>
     </form>
-    <!-- ádfasdfsadfsadfsdaf -->
 </body>
 </html>
 <?php
