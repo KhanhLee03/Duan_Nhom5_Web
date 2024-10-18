@@ -9,10 +9,10 @@
 <body>
     <h1 id="title"><strong>Đăng nhập</strong></h1>
     <form action="" method="POST">
-        <input id="username" type="text" name="username" placeholder="Tài khoản">
-        <br>
-        <input id="password" type="password" name="password" placeholder="Mật khẩu">
-        <br>
+    <input type="text" name="username" placeholder="Username" >
+    <br>
+    <input type="password" name="password" placeholder="Password" >
+    <br>
         <button id="login" type="submit" name="action" value="login" >Đăng nhập</button>
         <button id="register" type="submit" name="action" value="register">Đăng ký</button>
     </form>
