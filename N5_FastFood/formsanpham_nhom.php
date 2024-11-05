@@ -21,14 +21,14 @@ if(isset($_POST['tbOk'])){
 ?>
 
 <div class="container" >
-    <h2>Thêm Sản Phẩm Nhóm</h2>
+    <h2>Thêm vào danh mục</h2>
     <form action="" method="post">
         <div class="form-group">
-            <label for="tensp">Mã Nhóm:</label>
+            <label for="tensp">Mã:</label>
             <input type="text" class="form-control" id="id" name="id" required>
         </div>
         <div class="form-group">
-            <label for="tensp">Tên Nhóm:</label>
+            <label for="tensp">Tên loại sản phẩm:</label>
             <input type="text" class="form-control"  name="tennhom" required>
         </div>
         <div class="form-group">

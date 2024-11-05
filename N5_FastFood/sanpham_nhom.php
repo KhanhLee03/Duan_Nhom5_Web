@@ -44,11 +44,10 @@ include "function_nhomsanpham.php";
 
 }
 .container button{
-     border-radius: 7px; 
-   
-     margin-left: 10px;
-
-     font-size: 15px;
+    border-radius: 7px;   
+    font-size: 15px;
+    height: auto;
+    font-size: large;
 }
 
 .example{
@@ -104,13 +103,12 @@ th,td{
                                 <a href="suasanpham_nhom.php?id=<?php echo $row["id"]; ?>" style="text-decoration: none">Sửa</a>
                                 <a href="xoasanpham_nhom.php?id=<?php echo $row["id"]; ?>" style="text-decoration: none">Xóa</a>
                             </td>
-
                             </tr>
                            
                         <?PHP } ?> 
                     </tbody>
                 </table>
-              <button>  <a href="formsanpham_nhom.php" style="text-decoration: none; color: black; ">Thêm Nhóm Sản Phẩm Sắc Đẹp</a></button>
+              <button>  <a href="formsanpham_nhom.php"style="text-decoration: none; color: black; ">Thêm Nhóm Sản Phẩm</a></button>
             </div>
         </div>
 

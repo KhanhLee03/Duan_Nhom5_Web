@@ -26,7 +26,7 @@
                             <div class="footer__info">
                                 <p class="footer__info-item">Dương Lê Khánh  -  16/11/2003</p>
                                 <p class="footer__info-item">Nguyễn Văn Thắng  -  29/12/2003</p>
-                                <p class="footer__info-item">Phạm Tuấn Vũ  -  ?/?/2003</p>
+                                <p class="footer__info-item">Phạm Tuấn Vũ  -  31/03/2003</p>
                             </div>
                             <div class="footer__social">
                                 <a href="" class="footer__social-link ">

@@ -80,15 +80,9 @@ padding: 0px 10px 0px 10px;
                             <th>Enable</th>
                             <th>Ghi Chú</th>
                             <th>Điểm Nổi Bật</th>
-                            <th> Điều Kiện Chăm Sóc </th>
-                            <th>Cách Chăm Sóc</th>
                             <th> Xuất Xứ</th>
                             <th>Ngày Đăng</th>
-                            <th>Kích Thước</th>
-                            <th>Người Đăng</th>
-                            <th>Giống Loài</th>
-                            
-                           
+                            <th>Người Đăng</th>                                                     
                         </tr>
                     </thead>
                     <tbody>
@@ -143,28 +137,14 @@ padding: 0px 10px 0px 10px;
                                     <?PHP echo $row["diemnoibat"] ?>
                                 </td>
                                 <td>
-                                    <?PHP echo $row["dieukienchamsoc"] ?>
-                                </td>
-                                <td>
-                                    <?PHP echo $row["cachchamsoc"] ?>
-                                </td>
-                                <td>
                                     <?PHP echo $row["xuatxu"] ?>
                                 </td>
                                 <td>
                                     <?PHP echo $row["ngaydang"] ?>
                                 </td>
                                 <td>
-                                    <?PHP echo $row["kichthuoc"] ?>
-                                </td>
-                                <td>
                                     <?PHP echo $row["nguoidang"] ?>
-                                </td>
-                                <td>
-                                    <?PHP echo $row["giongloai"] ?>
-                                </td>
-                               
-
+                                </td>                              
                             </tr>
                            
                         <?PHP }

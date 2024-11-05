@@ -24,13 +24,9 @@
         $sanpham->enable = isset($_POST['enable']) ? $_POST['enable'] : 0;
         $sanpham->ghichu = isset($_POST['ghichu']) ? $_POST['ghichu'] : '';
         $sanpham->diemnoibat = isset($_POST['diemnoibat']) ? $_POST['diemnoibat'] : '';
-        $sanpham->dieukienchamsoc = isset($_POST['dieukienchamsoc']) ? $_POST['dieukienchamsoc'] : '';
-        $sanpham->cachchamsoc = isset($_POST['cachchamsoc']) ? $_POST['cachchamsoc'] : '';
         $sanpham->xuatxu= isset($_POST['xuatxu']) ? $_POST['xuatxu'] : '';
         $sanpham->ngaydang = isset($_POST['ngaydang']) ? $_POST['ngaydang'] : '';
-        $sanpham->kichthuoc = isset($_POST['kichthuoc']) ? $_POST['kichthuoc'] : '';
         $sanpham->nguoidang = isset($_POST['nguoidang']) ? $_POST['nguoidang'] : '';
-        $sanpham->giongloai = isset($_POST['giongloai']) ? $_POST['giongloai'] : '';
         // $sanpham->tenanhcu = $row['img'];
         $sanpham->updatesanpham();
     }
@@ -108,14 +104,6 @@
                 <textarea  class="form-control"  rows="3" name="diemnoibat"><?php  echo $row['diemnoibat'] ?> </textarea>
             </div>
             <div class="form-group">
-                <label for="mota">Điều Kiện Chăm Sóc:</label>
-                <textarea  class="form-control"  rows="3" name="dieukienchamsoc"><?php  echo $row['dieukienchamsoc'] ?> </textarea>
-            </div>
-            <div class="form-group">
-                <label for="mota">Cách Chăm Sóc:</label>
-                <textarea  class="form-control"  rows="3" name="cachchamsoc"><?php  echo $row['cachchamsoc'] ?> </textarea>
-            </div>
-            <div class="form-group">
                 <label for="tensp">Xuất Xứ:</label>
                 <input type="text" class="form-control" name="xuatxu" value="<?php echo $row["xuatxu"] ?> ">
             </div>
@@ -124,16 +112,8 @@
                 <input type="text" class="form-control" name="ngaydang" value="<?php echo $row["ngaydang"] ?> ">
             </div>
             <div class="form-group">
-                <label for="tensp">Kích Thước:</label>
-                <input type="text" class="form-control" name="kichthuoc" value="<?php echo $row["kichthuoc"] ?> ">
-            </div>
-            <div class="form-group">
                 <label for="tensp">Người Đăng:</label>
                 <input type="text" class="form-control" name="nguoidang" value="<?php echo $row["nguoidang"] ?> ">
-            </div>
-            <div class="form-group">
-                <label for="tensp">Giống Loài:</label>
-                <input type="text" class="form-control" name="giongloai" value="<?php echo $row["giongloai"] ?> ">
             </div>
             <div class="form-group form-check">s
                 

@@ -46,7 +46,7 @@
                                         <i class="fa-solid fa-calendar-days"></i> <?php echo $row["ngaydang"] ?>
                                     </span>
                                 </span>
-                                <p class="news__details-msg"><?php echo $row["mota"] ?>Bạn cho giá thể đã xử lý nấm bệnh vào chậu cao cách miệng 5cm. Trồng cây sao cho cây phân bố xung quanh chậu, không trồng cây quá sát thành chậu. Nên trồng cây vào buổi chiều, sau khi tưới nước đẫm cây.</p>
+                                <p class="news__details-msg"><?php echo $row["mota"] ?>Ngon ngọt thơm phưng phức dành cho tín đồ ham ăn</p>
                             </div>
                         </a>
                         </div>

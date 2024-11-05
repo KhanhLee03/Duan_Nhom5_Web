@@ -93,6 +93,7 @@ $result=mysqli_query($conn,$sql);
         position: relative;
     }
 </style>
+<title>Danh mục sản phẩm</title>
   <div class="grid wide">
   <div class="container-product">
                     <h3 class="container-product__heading">Sản Phẩm Bạn Quan Tâm</h3>

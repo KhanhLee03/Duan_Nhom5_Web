@@ -39,13 +39,9 @@
        $sanpham->enable = isset($_POST['enable']) ? $_POST['enable'] : 0;
        $sanpham->ghichu = isset($_POST['ghichu']) ? $_POST['ghichu'] : '';
        $sanpham->diemnoibat = isset($_POST['diemnoibat']) ? $_POST['diemnoibat'] : '';
-       $sanpham->dieukienchamsoc= isset($_POST['dieukienchamsoc']) ? $_POST['dieukienchamsoc'] : '';
-       $sanpham->cachchamsoc = isset($_POST['cachchamsoc']) ? $_POST['cachchamsoc'] : '';
        $sanpham->xuatxu= isset($_POST['xuatxu']) ? $_POST['xuatxu'] : '';
        $sanpham->ngaydang = isset($_POST['ngaydang']) ? $_POST['ngaydang'] : '';
-       $sanpham->kichthuoc = isset($_POST['kichthuoc']) ? $_POST['kichthuoc'] : '';
        $sanpham->nguoidang = isset($_POST['nguoidang']) ? $_POST['nguoidang'] : '';
-       $sanpham->giongloai = isset($_POST['giongloai']) ? $_POST['giongloai'] : '';
        $sanpham->themsanpham();
 
    }
@@ -113,14 +109,6 @@
             <textarea type="text" rows="3" class="form-control" name="diemnoibat"></textarea>
         </div>
         <div class="form-group">
-            <label for="ghichu">Điều Kiện Chăm Sóc:</label>
-            <textarea type="text" rows="3" class="form-control" name="dieukienchamsoc"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="ghichu">Cách Chăm Sóc:</label>
-            <textarea type="text" rows="3" class="form-control" name="cachchamsoc"></textarea>
-        </div>
-        <div class="form-group">
             <label for="tensp">Xuất Xứ:</label>
             <input type="text" class="form-control" name="xuatxu" >
         </div>
@@ -129,16 +117,8 @@
             <input type="text" class="form-control" name="ngaydang" >
         </div>
         <div class="form-group">
-            <label for="tensp">Kích Thước:</label>
-            <input type="text" class="form-control" name="kichthuoc" >
-        </div>
-        <div class="form-group">
             <label for="tensp">Người Đăng:</label>
             <input type="text" class="form-control" name="nguoidang" >
-        </div>
-        <div class="form-group">
-            <label for="tensp">Giống Loài:</label>
-            <input type="text" class="form-control" name="giongloai">
         </div>
         <div class="form-group form-check">
             <label class="form-check-label">

@@ -220,6 +220,7 @@ min-width: 140px;
     cursor:poiter; 
 }
 </style>
+<title>Chi tiết sản phẩm</title>
         <div class="content">
             <div class="grid wide">
                 <div class="row">
@@ -313,7 +314,7 @@ min-width: 140px;
                                             <span class="content-product__code-num"><?php echo $row["xuatxu"] ?></span>
                                         </div>
                                         <p class="content-product__right-msg" >Mô tả:
-                                        <?php echo $row["mota"] ?>   Bạn cho giá thể đã xử lý nấm bệnh vào chậu cao cách miệng 5cm. Trồng cây sao cho cây phân bố xung quanh chậu, không trồng cây quá sát thành chậu. Nên trồng cây vào buổi chiều, sau khi tưới nước đẫm cây. </p>
+                                        <?php echo $row["mota"] ?>   dành cho bạn. </p>
                                         <form action="cart.php" method="post" class="detail-items__quantity">
                                             <div class="content-product-left-select">
                                                 <p class="detail-items__quantity-text">Số lượng:</p>
@@ -357,7 +358,7 @@ min-width: 140px;
                                                     <img src="upload/visa.png" alt="Visa" class="content-product__bank-icon">
                                                 </a>
                                                 <a href="" class="content-product__bank">
-                                                    <img src="upload/paypal.png" alt="Paypal" class="content-product__bank-icon">
+                                                    <img src="upload/mb_bank.jpg" alt="Paypal" class="content-product__bank-icon">
                                                 </a>
                                                 <a href="" class="content-product__bank">
                                                     <img src="upload/americanexpress.png" alt="Ameriacan Express" class="content-product__bank-icon">
@@ -416,24 +417,19 @@ min-width: 140px;
                     <h3 class="content__describe-title">Mô Tả</h3>
                     <div class="content__describe-info">
                         <p class="content__describe-msg">
-                            <b>Tên cây:</b> <?php echo $row["tensp"] ?> <br>
-                            <b>Kích thước:</b>  <?php echo $row["kichthuoc"] ?> <br>
-                            <b>Giá trên bao gồm:</b> Cây, chậu, đĩa lót, sỏi. Chưa bao gồm phí vận chuyển. <br>
+                            <b>Tên món:</b> <?php echo $row["tensp"] ?> <br>
                         </p>
                         <p class="content__describe-msg">
                         <b>Mô Tả:</b>  <?php echo $row["mota"] ?>
                         </p>
                         <p class="content__describe-msg">
-                            <b>Chế độ chăm sóc:</b>  <?php echo $row["dieukienchamsoc"] ?>
                         </p>
                         <p class="content__describe-msg">
                             <b>Đặc điểm:</b>  <?php echo $row["diemnoibat"] ?>
                         </p>
                         <p class="content__describe-msg">
-                            <b>Cách chăm sóc:</b>  <?php echo $row["cachchamsoc"] ?>
                         </p>
                         <p class="content__describe-msg">
-                        <b>Giống Loài:</b>  <?php echo $row["giongloai"] ?>
                         </p>
                         <p class="content__describe-msg">
                         <b>Xuất Xứ:</b>  <?php echo $row["xuatxu"] ?>
