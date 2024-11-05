@@ -22,7 +22,7 @@
                 <div class="footer__menu">
                     <div class="row">
                         <div class="col l-5">
-                            <img src="upload/hi.png" alt="" class="footer__img">
+                            <img src="upload/logo.png" alt="" class="footer__img">
                             <div class="footer__info">
                                 <p class="footer__info-item">Dương Lê Khánh  -  16/11/2003</p>
                                 <p class="footer__info-item">Nguyễn Văn Thắng  -  29/12/2003</p>

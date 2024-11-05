@@ -193,7 +193,7 @@ h2{
                         let currentSlideInfo = slides[slideIndex - 1].getElementsByClassName("mySlides-info")[0];
                         currentSlideInfo.style.display = "block";
                         
-                        setTimeout(showSlides, 3000); // Thay đổi thời gian (2000 -> 2 giây)
+                        setTimeout(showSlides, 3000); // Thay đổi thời gian (3000 -> 3 giây)
                         }
                         </script>
                 <!-- ------ -->
@@ -260,7 +260,7 @@ h2{
                         <div class="row">
                             <div class="col l-7-2">
                                 <div class="container-top__left">
-                                    <h3 class="container-top__left-heading">Top Những Loại Trà Sữa Được Yêu Thích Nhất</h3>
+                                    <h3 class="container-top__left-heading">Top Những Món Yêu Thích Nhất</h3>
                                     <p class="container-top__left-text">Hãy thử trải nghiệm tôi chắc chắn không làm bạn thất vọng </p>
                                     <a href="fullsp.php" class="container-top__left-btn">Khám phá ngay</a>
                                 </div>

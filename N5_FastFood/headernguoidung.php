@@ -211,7 +211,7 @@
                     </div>
                     <div class="nav-center__opera">
                         <div class="nav-center__hotline">
-                            <img src="upload/24h.jpg" alt="" class="nav-center__hotline-img">
+                            <img src="upload/24h.png" alt="" class="nav-center__hotline-img">
                             <div class="nav-center__hotline-info">
                                 <span class="nav-center__hotline-info-title">Hotline</span>
                                 <span class="nav-center__hotline-info-num">0123 456 789</span>
