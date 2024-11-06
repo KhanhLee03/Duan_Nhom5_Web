@@ -1,7 +1,7 @@
 <style>
     .footer__img {
         text-decoration: none;
-        width: 280px;
+        width: 180px;
         color: transparent;
         height: 120px;
     }
@@ -13,6 +13,7 @@
     }
     .footer__info-item {
         margin-left: 5px; 
+        font-size: 16px;
     }
 
 </style>

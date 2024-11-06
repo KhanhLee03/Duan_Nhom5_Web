@@ -202,7 +202,7 @@ h2{
                     <div class="container-product__heading-border"></div>
                     <div class="row"> 
                     <?php
-                        $limit = 10; // Số lượng sản phẩm muốn hiển thị
+                        $limit = 30; // Số lượng sản phẩm muốn hiển thị
                         $count = 0; // Biến đếm
                         while ($row= mysqli_fetch_assoc($result)) { 
                             if ($count >= $limit) {

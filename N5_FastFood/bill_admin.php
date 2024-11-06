@@ -45,7 +45,6 @@ $count= mysqli_num_rows($result);
 }
 .container button{
      border-radius: 7px; 
-   
      margin-left: 250px;
      margin-top: 10px;
      font-size: 15px;

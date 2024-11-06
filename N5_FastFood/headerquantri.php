@@ -17,8 +17,8 @@
     /* Manager */
 
     .manager {
-        background-color: var(--green-color);
-        height: 60px;
+        background-color:  #FF9933;
+        height: 80px;
     }
     .manager-form {
         display: flex;
@@ -31,8 +31,8 @@
         text-align: center;
     }
     .manager-logo__img {
-        width: 70%;
-        height: 60px;
+        width: 120px;
+        height: 80px;
     }
     .manager-form__wrap {
         position: relative;
@@ -43,7 +43,7 @@
         transition: background-color ease-in .2s;
         }
     .manager-form__menu-heading {
-        color:var(--white-color);
+        color: black;
         font-size: 1.9rem;
         font-weight: 500;
         text-transform: uppercase;
@@ -54,7 +54,7 @@
         position: absolute;
         bottom: -82px;
         width: 300px;
-        background-color: var(--white-color);
+        background-color:  #79d1d8;
         box-shadow: 0 0 10px 0 rgba(0,0,0,0.15);
         border-radius: 2px;
         display: none;
@@ -63,8 +63,8 @@
     .manager-form__menu-nav {
         position: absolute;
         bottom: -122px;
-        width: 300px;
-        background-color: var(--white-color);
+        width: 320px;
+        background-color: #79d1d8;
         box-shadow: 0 0 10px 0 rgba(0,0,0,0.15);
         border-radius: 2px;
         display: none !important;
@@ -102,7 +102,7 @@
         border:none;
     }
     .manager-form__wrap:hover {
-        background-color: #6bc56e;
+        background-color:  rgb(255, 207, 245);
     }
     .manager-form__wrap:hover .manager-form__menu {
         display: block;
@@ -111,7 +111,7 @@
         display: block !important;
     }
     .manager-form__menu-items:hover {
-        background-color: #f2f2f2;
+        background-color:  rgb(255, 207, 245);
   }
   .manager-form__wrap a{
     text-decoration: none;
