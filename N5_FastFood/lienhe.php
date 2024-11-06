@@ -28,6 +28,7 @@ if(isset($_POST['ok'])){
     border:1px solid black !important;
 }
 </style>
+<title>Liên hệ</title>
         <div class="contact">
             <div class="grid wide">
                 <div class="row">

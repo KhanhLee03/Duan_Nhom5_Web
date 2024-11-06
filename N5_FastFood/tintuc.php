@@ -1,5 +1,4 @@
 <title>Tin tức nóng hổi</title>
-
 <?php include"headernguoidung.php";?>
 <?php include"tintuc1.php";?>
 <?php include"tintuc2.php";?>

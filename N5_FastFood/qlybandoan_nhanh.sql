@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 05, 2024 lúc 12:27 PM
+-- Thời gian đã tạo: Th10 06, 2024 lúc 07:54 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -47,7 +47,8 @@ INSERT INTO `bill` (`id`, `name`, `address`, `tel`, `email`, `total`, `pttt`) VA
 (17, 'Nguyễn Văn Thắng', 'Hòa Bình', '0987651234', 'thanghb2003@gmail.com', 33, 0),
 (18, 'Duong Le Khánh', 'BGzz', '0987651234', 'kiki2003bgzz@gmail.com', 321, 0),
 (19, 'Khánh', 'Bắc Giang', '0987654321', 'khanh2003@gmail.com', 70, 0),
-(20, 'Duong Le Khanh', 'Bắc Giang', '0987654321', 'kiki2003bgzz@gmail.com', 62, 0);
+(20, 'Duong Le Khanh', 'Bắc Giang', '0987654321', 'kiki2003bgzz@gmail.com', 62, 0),
+(21, 'Duong Le Khánh', 'Bắc Giang', '0987651234', 'akiki@gmail.com', 69, 0);
 
 -- --------------------------------------------------------
 
@@ -70,15 +71,6 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `tensp`, `img`, `dongia`, `soluong`, `thanhtien`, `idbill`) VALUES
-(3, 'Hoa Lan Hồ Điệp', 'anh27.jpg', 390, 1, 390000, 2),
-(4, 'Hoa Hồng Kinh Đô   ', 'anh8x.jpg', 330, 1, 330000, 2),
-(6, 'Thiên Xuân Hồi Lạc', 'u.jpg', 300, 2, 600000, 4),
-(7, 'Chậu Thủy Cảnh', 'c.jpg', 300, 1, 300000, 4),
-(8, 'Thiên Xuân Hồi Lạc', 'u.jpg', 300, 1, 300000, 5),
-(9, 'Chậu Cảnh Vĩnh Hà ', 'q2.jpg', 200, 2, 400000, 5),
-(12, 'bánh dâu', 'b3.jpg', 40, 2, 80000, 7),
-(13, 'bánh mattcha', 'a4.jpg', 29, 1, 29000, 7),
-(14, 'bánh hoa quả', 'a6.jpg', 54, 1, 54000, 8),
 (15, 'bánh mattcha', 'a4.jpg', 29, 1, 29000, 8),
 (20, 'bánh socola', 'b1.jpg', 29, 1, 29000, 11),
 (21, 'bánh mátcha', 'a3.jpg', 38, 1, 38000, 11),
@@ -96,7 +88,8 @@ INSERT INTO `cart` (`id`, `tensp`, `img`, `dongia`, `soluong`, `thanhtien`, `idb
 (35, 'trà sữa kem trứng ', 'a1.png', 41, 1, 41000, 19),
 (36, 'Cheese ring burger', 'a9.png', 55, 1, 55000, 19),
 (38, 'trà sữa than tre', 'v2.png', 33, 1, 33000, 20),
-(39, 'American trio charcoal burger', 'bg1.png', 129, 1, 129000, 21);
+(39, 'American trio charcoal burger', 'bg1.png', 129, 1, 129000, 21),
+(11114, 'Pizza', 'pz2.png', 69, 1, 69000, 21);
 
 -- --------------------------------------------------------
 
@@ -106,59 +99,17 @@ INSERT INTO `cart` (`id`, `tensp`, `img`, `dongia`, `soluong`, `thanhtien`, `idb
 
 CREATE TABLE `lienhe` (
   `hoten` varchar(200) NOT NULL,
-  `sdt` int(10) NOT NULL,
+  `sdt` varchar(10) NOT NULL,
   `email` varchar(100) NOT NULL,
   `noidung` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Cấu trúc bảng cho bảng `login`
+-- Đang đổ dữ liệu cho bảng `lienhe`
 --
 
-CREATE TABLE `login` (
-  `tendangnhap` varchar(100) NOT NULL,
-  `matkhau` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `login`
---
-
-INSERT INTO `login` (`tendangnhap`, `matkhau`) VALUES
-('khanh', 16112003);
-
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `sanpham`
---
-
-CREATE TABLE `sanpham` (
-  `masp` varchar(100) NOT NULL,
-  `nhom_id` int(11) NOT NULL,
-  `tensp` varchar(200) NOT NULL,
-  `mota` text DEFAULT NULL,
-  `dongia` int(11) NOT NULL,
-  `img` varchar(200) DEFAULT NULL,
-  `enable` tinyint(4) NOT NULL DEFAULT 1,
-  `ghichu` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `sanpham`
---
-
-INSERT INTO `sanpham` (`masp`, `nhom_id`, `tensp`, `mota`, `dongia`, `img`, `enable`, `ghichu`) VALUES
-('1231', 2367, 'Hoa Hồng Nhung', 'siêu nhiều màu ', 123, 'hoa6.jpg', 1, 'hoa hồng '),
-('2342', 1213, 'Hoa cúc', '32e', 233, 'hoa2.jpg', 1, '232'),
-('45435', 2342, 'Hoa cẩm tú cầu', 'dsad', 3243, 'hoa5.jpg', 1, 'sdsa'),
-('32434', 2367, '35345  ', '34534  ', 435, 'take4.jpg', 1, ' ahihi '),
-('54645', 46456, '6456', '654', 65, 'anh1.jpg', 1, '565'),
-('56756', 2367, '7567 ', '5675 ', 75567, 'take4.jpg', 0, 'dfd '),
-('232', 2367, '32432 ', '43 ', 343, 'product.jpg', 1, '345 '),
-('111', 7567, 'Hoa Cẩm Tú Cầu', 'đẹp', 343, 'hoa3.png', 1, 'hay');
+INSERT INTO `lienhe` (`hoten`, `sdt`, `email`, `noidung`) VALUES
+('Duong Le Khánh', '0987654321', 'kiki2003bgzz@gmail.com', 'Thêm sản phẩm ngon hơn');
 
 -- --------------------------------------------------------
 
@@ -180,30 +131,47 @@ CREATE TABLE `sanpham1` (
   `enable` tinyint(4) NOT NULL DEFAULT 1,
   `ghichu` text DEFAULT NULL,
   `diemnoibat` text DEFAULT NULL,
-  `dieukienchamsoc` text DEFAULT NULL,
-  `cachchamsoc` text DEFAULT NULL,
   `xuatxu` varchar(255) DEFAULT NULL,
   `ngaydang` varchar(50) DEFAULT NULL,
-  `kichthuoc` varchar(255) DEFAULT NULL,
-  `nguoidang` varchar(50) DEFAULT NULL,
-  `giongloai` varchar(200) DEFAULT NULL
+  `nguoidang` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `sanpham1`
 --
 
-INSERT INTO `sanpham1` (`masp`, `nhom_id`, `tensp`, `mota`, `dongiacu`, `dongiamoi`, `img1`, `img2`, `img3`, `img4`, `enable`, `ghichu`, `diemnoibat`, `dieukienchamsoc`, `cachchamsoc`, `xuatxu`, `ngaydang`, `kichthuoc`, `nguoidang`, `giongloai`) VALUES
-('234345', 3242, 'trà sữa kem socola', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 34, 31, 'a4.png', 'a1.png', 'a2.png', 'a4.png', 1, 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'tuyên quang      ', '2/2/2022      ', 'gfh      ', 'Vũ Thị Bắc      ', 'Cúc      '),
-('23435345', 3242, 'trà sữa trà xanh', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 77, 54, 'a3.png', 'a8.png', 'br2.png', 'a3.png', 1, 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'tuyên quang      ', '2/2/2022      ', '30cm- 70cm      ', 'hi      ', 'Hoa Lan      '),
-('24235353', 3242, 'trà sữa khoai môn', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 44, 38, 'a2.png', 'a3.png', 'br1.png', 'a2.png', 1, 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Hải Dương        ', '2/11/2023      ', '10- 30 cm       ', 'Vũ Thị Bắc        ', 'hoa hồng cổ          '),
-('245', 3242, 'trà sữa kem trứng ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n     ', 45, 41, 'a1.png', 'a6.png', 'br1.png', 'a1.png', 1, 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n     ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n     ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n     ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n     ', 'Đồng Thấp     ', '2/2/2022     ', '10- 30 cm      ', 'Nguyễn Minh Thiện     ', 'Hoa Hồng Nhập Khẩu     '),
-('3436547568', 3242, 'trà sữa matcha', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 44, 29, 'a9.png', 'a3.png', 'v3.png', 'a9.png', 1, 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng  Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.\r\n\r\n      ', 'Tiên Quang      ', '2/11/2023      ', '10- 30 cm       ', 'Vũ Thị Bắc      ', 'Hoa Lan      '),
-('45', 3242, 'trà sữa than tre', '	Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.      ', 54, 33, 'v2.png', 'a10.png', 'a8.png', 'a9.png', 1, '	Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.      ', '	Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.      ', '	Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.      ', '	Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.      ', 'Hải Dương        ', '11/2/2023      ', '10- 30 cm       ', 'Nguyễn Minh Thiện      ', 'Hoa Lan      '),
-('4543', 3242, 'trà sữa mexico', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.    ', 333, 321, 'v1.png', 'a2.png', 'a4.png', 'v1.png', 1, 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.    ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.    ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.    ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.    ', 'Tiên Quang    ', '11/2/2023    ', '10cm-30cm    ', 'Vũ Thị Bắc    ', 'Hoa Hồng Nhập Khẩu    '),
-('47', 3242, 'hồng trà sữa', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.    ', 345, 232, 'a7.png', 'a2.png', 'a4.png', 'a7.png', 1, 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.    ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.    ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.    ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.    ', 'tuyên quang    ', '11/2/2023    ', '10cm-30cm    ', 'Vũ Thị Bắc    ', 'Hoa Lan    '),
-('666', 3242, 'trà xoài', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.     ', 321, 222, 'v4.png', 'a2.png', 'a4.png', 'v4.png', 1, 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.     ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.     ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.     ', 'Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.     ', 'Đồng Thấp     ', '2/11/2023     ', '30cm- 70cm     ', 'Vũ Thị Bắc       ', 'Hoa Hồng Nhập Khẩu     '),
-('87', 3242, 'trà sữa full topping', '	Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ   ', 34, 33, 'a10.png', 'a2.png', 'a9.png', 'a10.png', 1, '	Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.   ', '	Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.   ', '	Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.   ', '	Mặc dù lịch sử của bánh cupcake đã có từ rất lâu nhưng Cupcake chỉ thật sử nổi lên như một trào lưu vào thế kỷ XXI. Cupcake thường được sử dụng như một món tráng miệng trong các buổi tiệc tùng hay gặp mặt. Với đặc điểm ngon và bắt mắt, Cupcake hiện đang được ưa chuộng bởi mọi lứa tuổi. Một chiếc bánh tuy nhìn sặc sỡ nhưng cách làm cũng không quá cầu kỳ, nếu có điều kiện bạn nên thử một lần làm chiếc bánh này tại nhà, không gì ngon bằng được thường thức những chiếc Chupcake nhỏ xinh do chính tay mình làm.   ', 'Hải Dương     ', '11/2/2023   ', '10cm-30cm   ', 'Vũ Thị Bắc     ', 'hoa hồng cổ       ');
+INSERT INTO `sanpham1` (`masp`, `nhom_id`, `tensp`, `mota`, `dongiacu`, `dongiamoi`, `img1`, `img2`, `img3`, `img4`, `enable`, `ghichu`, `diemnoibat`, `xuatxu`, `ngaydang`, `nguoidang`) VALUES
+('SP1', 2, 'Cheese ring snack', 'Phô mai vòng\r\n\r\n\r\n\r\n      ', 34, 31, 'a4.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Ngon hết nước chấm luôn\r\n      ', 'Nhiều sốt', 'Bắc Giang  ', '12/10/2020 ', 'Khánh Akiki'),
+('SP10', 2, 'Cheese ring burger', '', 44, 29, 'a9.png', 'a3.png', 'v3.png', 'a9.png', 1, 'Một chiếc bánh hamburger ngon từ bánh ngọt từ thịt thơm từ rau xà lách', 'sốt babi kiu\r\n      ', 'Hà Nội', '15/07/2018      ', 'Thắng HB'),
+('SP11', 1, 'Combo king deli kuro ninja 01', 'Combo phải thử', 130, 118, 'cb2.png', 'bg1.png', 'cb1.png', 'coca.png', 1, 'Ngon hết nước chấm', 'Many food', 'Hà Nội', '12/08/2023', 'KiKi'),
+('SP12', 5, 'Cocacola', 'Cocacola no1', 20, 18, 'coca.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Uống cocacola đã phải biết', 'Không có', 'American', '11/06/2024', 'Justin Biba'),
+('SP13', 5, 'Fanta', 'Fanta đã quá ta', 20, 18, 'fanta.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Đơn giản chỉ là nước cam có ga', 'Nước cam có ga', 'American', '11/06/2024', 'Justin Biba'),
+('SP14', 5, 'Nước lọc', 'Nước lọc lạnh', 10, 7, 'nuocloc.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Đơn giản chỉ là nước lọc thôi nhưng mà ngon khi kèm với đồ ăn của chúng tôi :>', 'nothing', 'Việt Nam', '12/12/2022', 'Khánh Akiki'),
+('SP15', 5, 'Sprite', 'Ngon ngon ngon', 20, 18, 'sprite.png', 'trang.png', 'trang.png', 'trang.png', 1, 'nothing', 'nothing', 'American', '12/10/2019', 'Vũ'),
+('SP16', 6, 'Pizza', 'Chỉ có pizza thường', 78, 69, 'pz2.png', 'trang.png', 'trang.png', 'trang.png', 1, 'nothing', 'nothing', 'France', '10/11/2017', 'Thắng HB'),
+('SP17', 6, 'Pizza súc sích', 'Chỉ là thêm súc sích vào pizza thoy :>>>', 45, 39, 'pz1.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Jummy', 'Súc sích Đức', 'Korean', '05/09/2024', 'Vũ Baby'),
+('SP18', 6, 'Pizza Sun', 'Đơn giản nó chỉ là pizz đươc trang chí như mặt trời thoy :v', 69, 59, 'pz5.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Nothing', 'Nothing', 'China', '11/06/2024', 'Sơn Tùng'),
+('SP19', 6, 'Pizza cuộn', 'Pizza cuộn lại thôi =))', 45, 40, 'pz4.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Nothing', 'Nothing', 'American', '12/12/2022', 'Thắng bebe'),
+('SP20', 6, 'Pizza chay', 'Pizza làm từ rau củ quả', 79, 75, 'pz3.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Nothing', 'Nothing', 'American', '05/11/2024    ', 'Justin Biba'),
+('SP21', 1, 'Combo Đùi gà bốc lửa', '6 Đùi gà + 3 Nước ngọt + 2 Khoai tây chiên', 69, 68, 'cb3.png', 'duiga.png', 'pt.png', 'coca.png', 1, 'Combo này chỉ có ngon', 'Quá nhiều đồ ăn ngon', 'Hà Tây', '11/06/2024', 'Thắng HB'),
+('SP22', 2, 'Nem cuộn rong biển', 'x3 Nem', 25, 21, 'nc.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Nothing', 'Nothing', 'Hạ Long', '12/07/2021', 'Vũ Baby'),
+('SP23', 7, 'Mì Ý hải sản', 'Sợi mì dai dài ngon đến từng sợi kèm theo những con tôm béo múp', 49, 45, 'mi1.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Nothing', 'Nothing', 'Ý', '11/06/2024', 'Justin Biba'),
+('SP24', 7, 'Mì Ý thịt xà xíu', 'Sợi mì dai dài ngon đến từng sợi kèm theo những những miếng thịt mọng nước', 55, 49, 'mi2.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Nothing', 'Nothing', 'Ý', '12/12/2022', 'Khánh Akiki'),
+('SP25', 2, 'Đùi gà chiên mắm', 'Đùi gà béo ngậy dai dòn dụm', 38, 35, 'ga1.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Nothing', 'Nothing', 'American', '12/10/2019', 'Khánh Akiki   '),
+('SP26', 2, 'Black Hamburger', 'Bánh được làm từ than tre', 45, 42, 'bg1.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Ngon ', 'Ngon và healthy', 'American', '12/07/2021', 'Vũ Baby'),
+('SP27', 4, 'Bạc sỉu lắc sữa yến mạch', 'Thơm ngon vị sữa yến mạch + caffe  thơm ngon từ hạt caffe mộc', 49, 45, 'cf1.png', 'cf1.png', 'cf1.png', 'cf1.png', 1, 'Caffe ngon ngon ngon', 'Tỉnh táo tức thời', 'Hà Nội', '12/05/2019', 'Khánh Akiki   '),
+('SP28', 4, 'Caffe đường đen sữa đá', 'Ngon từ vị đắng của caffe ', 45, 39, 'cf2.png', 'cf2.png', 'cf2.png', 'cf2.png', 1, 'Nothing', 'Coffe ngon ngon ngon', 'Bắc Giang', '17/02/2020', 'Thắng HB'),
+('SP29', 4, 'Caffe đen đá', 'Caffe được làm từ caffe mộc thơm ngon tròn vị', 35, 29, 'cf3.png', 'cf3.png', 'cf3.png', 'cf3.png', 1, 'Nothing', 'Caffe thơm ngon', 'Vĩnh Phúc', '05/11/2024    ', 'Vũ'),
+('SP3', 3, 'Trà sữa khoai môn', 'Trà sữa thơm ngon\r\n\r\n      ', 44, 38, 'a2.png', 'a3.png', 'br1.png', 'a2.png', 1, 'Cứ phải gọi là ngon vãi cả ngon\r\n      ', 'Đầy ú ụ\r\n      ', 'Thanh Hóa  ', '02/11/2023      ', 'Huy Bebe  '),
+('SP30', 4, 'Latte nóng', 'Caffe được trang trí thêm 1 lớp kem sữa ở trên mặt theo đủ loại hình thù', 60, 55, 'cf4.png', 'cf4.png', 'cf4.png', 'cf4.png', 1, 'Thơm ngon tròn vị', 'Thơm từ caffe', 'Hà Nội', '12/07/2021', 'Vũ Baby'),
+('SP31', 4, 'Bạc sỉu nóng', 'Bạc sỉu nóng hổi vừa thổi vừa húp', 45, 39, 'cf5.png', 'cf5.png', 'cf5.png', 'cf5.png', 1, 'Caffe ngon ngon', 'Thơm lừng mùi caffe', 'Hòa Bình', '15/12/2021', 'Thắng Baby'),
+('SP32', 4, 'Caffe đen nóng', 'Caffe nóng hổi thơm phưng phức', 45, 39, 'cf6.png', 'cf6.png', 'cf6.png', 'cf6.png', 1, 'Caffe thơm ', 'Đắng =))', 'Bắc Giang', '12/10/2019', 'Justin Biba'),
+('SP4', 3, 'Trà sữa kem trứng ', 'Lớp kem trứng béo ngậy cứ phải gọi là mờ ê mê', 45, 41, 'a1.png', 'a6.png', 'br1.png', 'a1.png', 1, 'Đặc biệt thơm ngon\r\n     ', 'Lớp kem bông mềm\r\n\r\n     ', 'Hà Tĩnh', '02/02/2022     ', 'Long 9 ngón'),
+('SP5', 3, 'Trà sữa than tre', 'Thanh thanh và thơm nhẹ     ', 54, 33, 'v2.png', 'a10.png', 'a8.png', 'a9.png', 1, 'Vẫn cứ là oke      ', 'Thơm mùi than tre', 'Hòa Bình ', '16/12/2022      ', 'Aki'),
+('SP6', 3, 'Trà sữa mexico', 'Uống vào chỉ thoát lên 1 câu \"OH MY GAT MONA LISA\"', 333, 321, 'v1.png', 'a2.png', 'a4.png', 'v1.png', 1, 'Thơm ngon béo ngậy', 'Nhiều trân trâu', 'Mexico', '12/08/2017    ', 'Elizabet'),
+('SP7', 3, 'Hồng trà sữa', 'Không phải làm từ quả hồng đâu mà đơn giản là pha từ hồng trà kèm sữa...', 345, 232, 'a7.png', 'a2.png', 'a4.png', 'a7.png', 1, 'Very jummy  ', 'Medium   ', 'Quảng Ninh', '15/02/2024    ', 'Vũ DK'),
+('SP8', 3, 'Trà xoài', 'Trà xoài thơm ngon bổ dưỡng', 321, 222, 'v4.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Ngon ngon ngon     ', 'Verry jummy   ', 'Bắc Giang', '05/11/2024    ', 'Khánh Akiki   '),
+('SP9', 2, 'American fries bacon', '	Khoai chiên với xốt mayo cay dịu và xốt tiêu đen.', 34, 33, 'a10.png', 'a2.png', 'a9.png', 'a10.png', 1, '	Cứ phải gọi là ngon ngon ngon', '	Sốt đặc biệt', 'Thái Bình mồ hôi rơi', '17/02/2020', 'Huy Bebe ');
 
 -- --------------------------------------------------------
 
@@ -222,9 +190,13 @@ CREATE TABLE `sanpham_nhom` (
 --
 
 INSERT INTO `sanpham_nhom` (`id`, `tennhom`, `ghichu`) VALUES
-(3242, 'trà sữa vị', '2     '),
-(32424, 'trà sữa  hoa quả', '4234     '),
-(235345, 'trà kem', '234     ');
+(1, 'Combo', 'Jummy'),
+(2, 'Món ăn kèm', 'Ngon và sạch  '),
+(3, 'Trà sữa', 'Thanh mát, béo ngậy '),
+(4, 'Coffe', 'Mạnh mẽ   '),
+(5, 'Nước giải khát', 'Mát lạnh'),
+(6, 'Pizza', 'Ngon vãi nho'),
+(7, 'Mì Ý', 'Dai ngon tròn vị');
 
 -- --------------------------------------------------------
 
@@ -246,7 +218,6 @@ CREATE TABLE `taikhoan` (
 
 INSERT INTO `taikhoan` (`tendangnhap`, `matkhau`, `hoten`, `email`, `enable`) VALUES
 ('khanhakiki', '16112003', 'Duong Le Khanh', 'kiki2003bgzz@gmail.com', 1),
-('thaidui', '2003', 'Thai Dui', 'thaiml@gmail.com', 0),
 ('thang2003', '2003', 'Nguyễn Văn Thắng', 'thanghb2003@gmail.com', 0);
 
 --
@@ -270,12 +241,6 @@ ALTER TABLE `cart`
 --
 ALTER TABLE `lienhe`
   ADD PRIMARY KEY (`hoten`);
-
---
--- Chỉ mục cho bảng `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`tendangnhap`);
 
 --
 -- Chỉ mục cho bảng `sanpham1`
@@ -303,13 +268,13 @@ ALTER TABLE `taikhoan`
 -- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11114;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11115;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

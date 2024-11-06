@@ -46,17 +46,7 @@ h4{
                           <h1>      <a href="chitiet.php?masp=<?php echo $row["masp"] ?>" class="news__detail-title"><?php echo $row["tensp"] ?></a></h1>
                                <h4>Điểm Nổi Bật: </h4>
                                <p class="news__details-msg">+ <?php echo  $row["mota"] ?></p>
-                               <p class="news__details-msg">+ <?php echo  $row["mota"] ?></p>
-                                </span>
-                                <h4>Điều Kiện Chăm Sóc: </h4>
-                                <p class="news__details-msg">+ <?php echo  $row["mota"] ?></p>
-                                <p class="news__details-msg">+ <?php echo  $row["mota"] ?></p>
-                                <h4>Cách Chăm Sóc : </h4>
-                                <p class="news__details-msg">+ <?php echo  $row["mota"] ?></p>
-                                <p class="news__details-msg">+ <?php echo  $row["mota"] ?></p>
-                                <h4> Xuất Xứ </h4>
-                                <p class="news__details-msg">+ <?php echo  $row["mota"] ?></p>
-                                <p class="news__details-msg">+ <?php echo  $row["mota"] ?></p>
+                                </span>                              
                             </div>
 
                             

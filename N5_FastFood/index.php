@@ -1,3 +1,4 @@
+<link rel="shortcut icon" href="upload/logo.png" type="image/x-icon" />
 <?php include"headernguoidung.php";?>
 <?php include"main1.php";?>
 <?php include"main2.php";?>
