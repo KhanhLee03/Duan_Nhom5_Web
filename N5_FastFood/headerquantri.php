@@ -66,7 +66,7 @@
     .manager-form__menu-nav {
         position: absolute;
         bottom: -122px;
-        width: 320px;
+        width: 300px;
         background-color: #79d1d8;
         box-shadow: 0 0 10px 0 rgba(0,0,0,0.15);
         border-radius: 2px;

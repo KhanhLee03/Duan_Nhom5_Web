@@ -58,7 +58,6 @@ padding: 0px 10px 0px 10px;
 
 <body>
 
-    
     <div class="example">
         <div class="container">
             <div class="row">
