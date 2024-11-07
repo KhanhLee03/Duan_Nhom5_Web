@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 06, 2024 lúc 07:54 AM
+-- Thời gian đã tạo: Th10 07, 2024 lúc 07:32 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -48,7 +48,12 @@ INSERT INTO `bill` (`id`, `name`, `address`, `tel`, `email`, `total`, `pttt`) VA
 (18, 'Duong Le Khánh', 'BGzz', '0987651234', 'kiki2003bgzz@gmail.com', 321, 0),
 (19, 'Khánh', 'Bắc Giang', '0987654321', 'khanh2003@gmail.com', 70, 0),
 (20, 'Duong Le Khanh', 'Bắc Giang', '0987654321', 'kiki2003bgzz@gmail.com', 62, 0),
-(21, 'Duong Le Khánh', 'Bắc Giang', '0987651234', 'akiki@gmail.com', 69, 0);
+(21, 'Duong Le Khánh', 'Bắc Giang', '0987651234', 'akiki@gmail.com', 69, 0),
+(22, 'Duong Le Khánh', 'Bắc Giang', '0987651234', 'akiki@gmail.com', 234, 0),
+(23, 'Nguyễn Văn Thắng', 'Thanh Hoa', '0987651234', 'akiki@gmail.com', 68, 0),
+(24, 'Nguyễn Văn Thắng', 'Thanh Hoa', '0987651234', 'akiki@gmail.com', 42, 0),
+(25, 'Nguyễn Văn Thắng', 'Hòa Bình', '0987651234', 'akiki@gmail.com', 39, 0),
+(26, 'Nguyễn Văn Thắng', 'Hòa Bình', '0987651234', 'akiki@gmail.com', 253, 0);
 
 -- --------------------------------------------------------
 
@@ -71,12 +76,6 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `tensp`, `img`, `dongia`, `soluong`, `thanhtien`, `idbill`) VALUES
-(15, 'bánh mattcha', 'a4.jpg', 29, 1, 29000, 8),
-(20, 'bánh socola', 'b1.jpg', 29, 1, 29000, 11),
-(21, 'bánh mátcha', 'a3.jpg', 38, 1, 38000, 11),
-(24, 'bánh tét', 't2.png', 38, 1, 38000, 13),
-(25, 'bánh da lợn', 't7.png', 321, 1, 321000, 13),
-(26, 'bánh tiêu', 't5.png', 29, 1, 29000, 13),
 (27, 'Cheese ring snack', 'a4.png', 35, 1, 35000, 14),
 (28, 'trà sữa matcha', 'a9.png', 29, 1, 29000, 14),
 (29, 'trà xoài', 'v4.png', 222, 1, 222000, 14),
@@ -89,7 +88,16 @@ INSERT INTO `cart` (`id`, `tensp`, `img`, `dongia`, `soluong`, `thanhtien`, `idb
 (36, 'Cheese ring burger', 'a9.png', 55, 1, 55000, 19),
 (38, 'trà sữa than tre', 'v2.png', 33, 1, 33000, 20),
 (39, 'American trio charcoal burger', 'bg1.png', 129, 1, 129000, 21),
-(11114, 'Pizza', 'pz2.png', 69, 1, 69000, 21);
+(11114, 'Pizza', 'pz2.png', 69, 1, 69000, 21),
+(11115, 'Caffe đường đen sữa đá', 'cf2.png', 39, 1, 39000, 22),
+(11116, 'Combo king deli kuro ninja 01', 'cb2.png', 118, 1, 118000, 22),
+(11117, 'Cocacola', 'coca.png', 18, 1, 18000, 22),
+(11118, 'Pizza Sun', 'pz5.png', 59, 1, 59000, 22),
+(11119, 'Combo Đùi gà bốc lửa', 'cb3.png', 68, 1, 68000, 23),
+(11120, 'Black Hamburger', 'bg1.png', 42, 1, 42000, 24),
+(11121, 'Pizza súc sích', 'pz1.png', 39, 1, 39000, 25),
+(11122, 'Trà xoài', 'v4.png', 222, 1, 222000, 26),
+(11123, 'Cheese ring snack', 'a4.png', 31, 1, 31000, 26);
 
 -- --------------------------------------------------------
 
@@ -142,7 +150,7 @@ CREATE TABLE `sanpham1` (
 
 INSERT INTO `sanpham1` (`masp`, `nhom_id`, `tensp`, `mota`, `dongiacu`, `dongiamoi`, `img1`, `img2`, `img3`, `img4`, `enable`, `ghichu`, `diemnoibat`, `xuatxu`, `ngaydang`, `nguoidang`) VALUES
 ('SP1', 2, 'Cheese ring snack', 'Phô mai vòng\r\n\r\n\r\n\r\n      ', 34, 31, 'a4.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Ngon hết nước chấm luôn\r\n      ', 'Nhiều sốt', 'Bắc Giang  ', '12/10/2020 ', 'Khánh Akiki'),
-('SP10', 2, 'Cheese ring burger', '', 44, 29, 'a9.png', 'a3.png', 'v3.png', 'a9.png', 1, 'Một chiếc bánh hamburger ngon từ bánh ngọt từ thịt thơm từ rau xà lách', 'sốt babi kiu\r\n      ', 'Hà Nội', '15/07/2018      ', 'Thắng HB'),
+('SP10', 2, 'Cheese ring burger ', ' Ngon haha', 44, 29, 'a9.png', 'trang.png', 'trang.png', 'a9.png', 1, 'Một chiếc bánh hamburger ngon từ bánh ngọt từ thịt thơm từ rau xà lách ', 'sốt babi kiu\r\n       ', 'Hà Nội ', '15/07/2018       ', 'Thắng HB '),
 ('SP11', 1, 'Combo king deli kuro ninja 01', 'Combo phải thử', 130, 118, 'cb2.png', 'bg1.png', 'cb1.png', 'coca.png', 1, 'Ngon hết nước chấm', 'Many food', 'Hà Nội', '12/08/2023', 'KiKi'),
 ('SP12', 5, 'Cocacola', 'Cocacola no1', 20, 18, 'coca.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Uống cocacola đã phải biết', 'Không có', 'American', '11/06/2024', 'Justin Biba'),
 ('SP13', 5, 'Fanta', 'Fanta đã quá ta', 20, 18, 'fanta.png', 'trang.png', 'trang.png', 'trang.png', 1, 'Đơn giản chỉ là nước cam có ga', 'Nước cam có ga', 'American', '11/06/2024', 'Justin Biba'),
@@ -234,7 +242,8 @@ ALTER TABLE `bill`
 -- Chỉ mục cho bảng `cart`
 --
 ALTER TABLE `cart`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idbill` (`idbill`);
 
 --
 -- Chỉ mục cho bảng `lienhe`
@@ -246,7 +255,8 @@ ALTER TABLE `lienhe`
 -- Chỉ mục cho bảng `sanpham1`
 --
 ALTER TABLE `sanpham1`
-  ADD PRIMARY KEY (`masp`);
+  ADD PRIMARY KEY (`masp`),
+  ADD KEY `nhom_id` (`nhom_id`);
 
 --
 -- Chỉ mục cho bảng `sanpham_nhom`
@@ -268,13 +278,13 @@ ALTER TABLE `taikhoan`
 -- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11115;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11124;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
