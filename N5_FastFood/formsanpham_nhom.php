@@ -19,9 +19,92 @@ if(isset($_POST['tbOk'])){
    
 }
 ?>
+<style>
+    body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #FFCCCC; /* Màu nền */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    color: #4e73df;
+    font-weight: 700;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    color: #333;
+    font-weight: 600;
+    flex: 1;
+    margin-right: 15px;
+    text-align: right;
+}
+
+.form-group input[type="text"],
+textarea,
+select {
+    flex: 2;
+    padding: 8px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+textarea {
+    resize: none;
+}
+
+.btn-primary {
+    background-color: #4e73df;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+}
+
+input[type="text"]:hover,
+textarea:hover,
+select:hover {
+    border-color: #4e73df;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.5);
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.7);
+    outline: none;
+}
+</style>
 
 <div class="container" >
-    <h2>Thêm vào danh mục</h2>
+    <h1>Thêm vào danh mục</h1>
     <form action="" method="post">
         <div class="form-group">
             <label for="tensp">Mã:</label>

@@ -15,7 +15,9 @@
     <style>
     
     /* Manager */
-
+    body{
+        background-color: #FFCCCC;
+    }
     .manager {
         background-color:  #FF9933;
         height: 80px;
@@ -24,6 +26,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        
     }
     .manager-logo {
         width: 25%;

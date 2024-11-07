@@ -101,7 +101,7 @@ if(move_uploaded_file($_FILES["img1"]["tmp_name"], $targer_file1)){
         `diemnoibat`='".$this->diemnoibat."',
         `xuatxu`='".$this->xuatxu."',
         `ngaydang`='".$this->ngaydang."',
-        `nguoidang`='".$this->nguoidang."',
+        `nguoidang`='".$this->nguoidang."'
         WHERE masp = '".$this->masanpham."'";
         $result = mysqli_query($this->conn, $sql);
 
