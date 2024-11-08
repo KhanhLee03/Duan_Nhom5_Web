@@ -243,7 +243,7 @@
                     <input type="text" name="tendangnhap" class="relog-form__gr-input" placeholder="Tên Đăng Nhập">
                 </div>
                 <div class="relog-form__gr">
-                    <input type="text" name="matkhau" class="relog-form__gr-input" placeholder="Password">
+                    <input type="password" name="matkhau" class="relog-form__gr-input" placeholder="Password">
                 </div>
                 <div class="relog-form__gr">
                     <input type="text" name="hoten" class="relog-form__gr-input" placeholder="Họ Và Tên">
