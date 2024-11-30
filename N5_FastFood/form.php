@@ -14,8 +14,10 @@ if(isset($_POST['tbOk'])){
    $taikhoan->matkhau=isset($_POST['matkhau']) ? $_POST['matkhau'] : '';
    $taikhoan->hoten=isset($_POST['hoten']) ? $_POST['hoten'] : '';
    $taikhoan->email=isset($_POST['email']) ? $_POST['email'] : '';
+   $taikhoan->email=isset($_POST['diachi']) ? $_POST['diachi'] : '';
+   $taikhoan->email=isset($_POST['sdt']) ? $_POST['sdt'] : '';
    $taikhoan->enable=isset($_POST['enable']) ? $_POST['enable'] : 0 ;
-   $taikhoan->insert1();
+   $taikhoan->insert();
 
    
 }
@@ -172,6 +174,14 @@ select:focus {
         <div class="form-group">
             <label for="email">Email:</label>
             <input type="text" class="form-control" name="email" >
+        </div>
+        <div class="form-group">
+            <label for="diachi">Địa chỉ:</label>
+            <input type="text" class="form-control" name="diachi" >
+        </div>
+        <div class="form-group">
+            <label for="sdt">Số điện thoại:</label>
+            <input type="text" class="form-control" name="sdt" >
         </div>
         <div class="form-group form-check">
             <label class="form-check-label">

@@ -73,6 +73,8 @@ $count = mysqli_num_rows($result);
                             <th>Mật Khẩu</th>
                             <th>Họ Tên</th>
                             <th>Email</th>
+                            <th>Địa chỉ</th>
+                            <th>Số điện thoại</th>
                             <th>Enable</th>
                             <th> </th>
                         </tr>
@@ -92,6 +94,12 @@ $count = mysqli_num_rows($result);
                                                 </td>
                                                 <td>
                                                     <?PHP echo $row["email"] ?>
+                                                </td>
+                                                <td>
+                                                    <?PHP echo $row["diachi"] ?>
+                                                </td>
+                                                <td>
+                                                    <?PHP echo $row["sdt"] ?>
                                                 </td>
                                                 <td>
                                                     <?PHP echo $row["enable"] ?>

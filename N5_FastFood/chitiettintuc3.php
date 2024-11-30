@@ -7,7 +7,7 @@ $sql = "SELECT * FROM `sanpham1`WHERE masp='$masp' ";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_array($result);
 ?>
- 	
+     
     
 <style>
         .news__detail-heading-border {
@@ -45,19 +45,15 @@ h4{
                             <div class="news__detail-info"> 
                           <h1>      <a href="chitiet.php?masp=<?php echo $row["masp"] ?>" class="news__detail-title"><?php echo $row["tensp"] ?></a></h1>
                                <h4>Điểm Nổi Bật: </h4>
-                               <p class="news__details-msg">+ <?php echo  $row["mota"] ?></p>
+                               <p class="news__details-msg">+ <?php echo $row["mota"] ?></p>
                                 </span>                              
-                            </div>
-
-                            
+                            </div>             
 </div>
-                        </div>
-
-                       
-        </div>
-                        </div>
-                        </div>
-                        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
                     
 
    

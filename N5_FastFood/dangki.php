@@ -22,10 +22,14 @@
     $taikhoan->matkhau=isset($_POST['matkhau']) ? $_POST['matkhau'] : '';
     $taikhoan->hoten=isset($_POST['hoten']) ? $_POST['hoten'] : '';
     $taikhoan->email=isset($_POST['email']) ? $_POST['email'] : '';
+    $taikhoan->diachi=isset($_POST['diachi']) ? $_POST['diachi'] : '';
+    $taikhoan->sdt=isset($_POST['sdt']) ? $_POST['sdt'] : '';
     $taikhoan->enable=isset($_POST['enable']) ? $_POST['enable'] : 0 ;
-    $taikhoan->insert();
- 
-    
+    $nhaplaimk = isset($_POST['nhaplaimk']) ? $_POST['nhaplaimk'] : '';
+    if($taikhoan->ktramk($nhaplaimk,$taikhoan->matkhau))
+    {
+        $taikhoan->insert();
+    }
  }
  ?>
    
@@ -52,7 +56,7 @@
       
             background-image: url('upload/de1.jpg'); 
             background-image:no-repeat ;
-            /* cần thêm thì bạn tự thêm link bên trên nhé */
+            
         }
         .relog-form__btn-link {
             width: 100%;
@@ -246,10 +250,19 @@
                     <input type="password" name="matkhau" class="relog-form__gr-input" placeholder="Password">
                 </div>
                 <div class="relog-form__gr">
+                    <input type="password" name="nhaplaimk" class="relog-form__gr-input" placeholder="Nhập lại Password">
+                </div>
+                <div class="relog-form__gr">
                     <input type="text" name="hoten" class="relog-form__gr-input" placeholder="Họ Và Tên">
                 </div>
                 <div class="relog-form__gr">
                     <input type="text" name="email" class="relog-form__gr-input" placeholder="Email">
+                </div>
+                <div class="relog-form__gr">
+                    <input type="text" name="diachi" class="relog-form__gr-input" placeholder="Địa chỉ">
+                </div>
+                <div class="relog-form__gr">
+                    <input type="text" name="sdt" class="relog-form__gr-input" placeholder="Số điện thoại">
                 </div>
             </div>
                 <span class="relog-form__checkbox">

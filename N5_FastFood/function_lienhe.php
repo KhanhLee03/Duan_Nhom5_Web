@@ -21,7 +21,6 @@ class lienhe extends ketnoi{
         $sql = "SELECT * FROM lienhe";
         $result = mysqli_query($this->conn, $sql);
         return $result;
-    
     }
     function hienthisdt($sdt){
         $sql = "SELECT * FROM `lienhe` WHERE sdt = '$sdt'" ;
@@ -36,7 +35,6 @@ class lienhe extends ketnoi{
         if($result){
             echo "<script> alert('Xóa thành công') </script>";
             echo "<script> window.location = 'lienhe1.php' </script>";
-        
         }
         else{
             echo "<script> alert('Lỗi') </script>";

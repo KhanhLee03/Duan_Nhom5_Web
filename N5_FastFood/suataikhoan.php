@@ -19,6 +19,8 @@ if(isset($_POST['ok'])){
     $taikhoan->matkhau = isset($_POST['matkhau']) ? $_POST['matkhau'] : '';
     $taikhoan->hoten = isset($_POST['hoten']) ? $_POST['hoten'] : '';
     $taikhoan->email= isset($_POST['email']) ? $_POST['email'] : '';
+    $taikhoan->email=isset($_POST['diachi']) ? $_POST['diachi'] : '';
+    $taikhoan->email=isset($_POST['sdt']) ? $_POST['sdt'] : '';
     $taikhoan->enable = isset($_POST['enable']) ? $_POST['enable'] : 0;
     $taikhoan->update();
 }
@@ -45,12 +47,20 @@ if(isset($_POST['ok'])){
                     required>
             </div>
             <div class="form-group">
-                <label for="email">Họ tên:</label>
+                <label for="hoten">Họ tên:</label>
                 <input type="text" class="form-control" name="hoten" value="<?php echo $row['hoten'] ?> ">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="text" class="form-control" name="email" value="<?php echo $row['email'] ?> ">
+            </div>
+            <div class="form-group">
+                <label for="diachi">Địa chỉ:</label>
+                <input type="text" class="form-control" name="diachi" value="<?php echo $row['diachi'] ?> ">
+            </div>
+            <div class="form-group">
+                <label for="sdt">Số điện thoại:</label>
+                <input type="text" class="form-control" name="sdt" value="<?php echo $row['sdt'] ?> ">
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label" style="margin-right: 30px; "> Kích hoạt </label>

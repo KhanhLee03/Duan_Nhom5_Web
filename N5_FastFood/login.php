@@ -20,7 +20,7 @@ function checklogin($tendn,$mk){
     global $conn;
     $mkMD5=$mk;
         $sql = "SELECT * FROM `taikhoan` Where (`tendangnhap`='$tendn' ) and ( `matkhau`='$mk')";
-        $result = mysqli_query($conn,$sql);
+        $result = mysqli_query($conn,$sql); 
         $numrow=mysqli_num_rows($result);
         if ($numrow!=0) {
            return true;
@@ -29,7 +29,7 @@ function checklogin($tendn,$mk){
         {
             return false;
         }
-        }
+    }
 
 
 if(isset($_POST['ok'])){ 
@@ -54,13 +54,14 @@ if(isset($_POST['ok'])){
 <?php
 
 
-if (isset($_GET['act']) && ($_GET['act'] != "")) {
+if (isset($_GET['act']) && ($_GET['act'] != "")) {  
     $act = $_GET['act'];
     switch ($act) {
         case 'quen_mk':
             if (isset($_POST['guiemail']) && ($_POST['guiemail'])) {
                 $email = $_POST['email'];
-                $checkemail = checkemail($email);
+                $tendn = $_POST['tendangnhap'];
+                $checkemail = checkemail($tendn,$email);
                 if (is_array($checkemail)) {
                     $_SESSION['thongbao'] = "Mật khẩu của bạn là : " . $checkemail['matkhau'];
                 } else {
